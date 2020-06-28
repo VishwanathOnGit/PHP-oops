@@ -13,3 +13,6 @@ define('URLROOT', 'http://localhost/oopsBasic/sharePosts');
 
 // Site Name
 define('SITENAME', 'Share Posts');
+
+// App Verison
+define('APPVERSION', '1.0.0');

@@ -4,13 +4,15 @@ class Pages extends Controller
 {
     public function __construct()
     {
-        // echo 'Pages Loaded';
+        $this->postModel = $this->model('Post');
     }
 
     public function index()
     {
+        $posts = $this->postModel->getPosts();
         $data = [
-            "title" => "Welcome to OOPS PHP"
+            "title" => "Welcome to OOPS PHP",
+            "posts" => $posts
         ];
         $this->view('pages/index', $data);
     }

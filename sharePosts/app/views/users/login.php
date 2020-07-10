@@ -2,14 +2,10 @@
 <div class="row mb-5">
     <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-5">
+            <?php flash('register_success'); ?>
             <h2>Create an account</h2>
-            <p>Please fill out this form to register with us</p>
-            <form action="<?= URLROOT ?>/users/register" method="POST">
-                <div class="form-group">
-                    <label for="name">Name: <sup>*</sup></label>
-                    <input type="text" name="name" class="form-control form-control-lg <?= (!empty($data['name_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['name']; ?>">
-                    <span class="invalid-feedback"><?= $data['name_err']; ?></span>
-                </div>
+            <p>Please fill in your credentials to login</p>
+            <form action="<?= URLROOT ?>/users/login" method="POST">
                 <div class="form-group">
                     <label for="email">Email: <sup>*</sup></label>
                     <input type="text" name="email" class="form-control form-control-lg <?= (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['email']; ?>">
@@ -20,17 +16,12 @@
                     <input type="password" name="password" class="form-control form-control-lg <?= (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['password']; ?>">
                     <span class="invalid-feedback"><?= $data['password_err']; ?></span>
                 </div>
-                <div class="form-group">
-                    <label for="confirm_password">Confirm Password: <sup>*</sup></label>
-                    <input type="password" name="confirm_password" class="form-control form-control-lg <?= (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>" value="<?= $data['confirm_password']; ?>">
-                    <span class="invalid-feedback"><?= $data['confirm_password_err']; ?></span>
-                </div>
                 <div class="row">
                     <div class="col">
-                        <input type="submit" value="Register" class="btn btn-success btn-block">
+                        <input type="submit" value="Login" class="btn btn-success btn-block">
                     </div>
                     <div class="col">
-                        <a href="<?= URLROOT ?>/users/login" class="btn btn-light btn-block">Have an account? Login</a>
+                        <a href="<?= URLROOT ?>/users/register" class="btn btn-light btn-block">No account? Register</a>
                     </div>
                 </div>
             </form>
